@@ -12,8 +12,6 @@ import java.time.LocalDateTime;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-//@Getter
-//@Setter
 @Data
 @Table(name="users")
 @Builder
@@ -22,7 +20,7 @@ public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(length = 20)
-    private Long id;
+    private long id;
 
     @Column(nullable = false, unique = true, length = 50)
     private String username;
@@ -38,11 +36,11 @@ public class Users {
             columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDate createdAt;
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @AllArgsConstructor
@@ -18,7 +19,7 @@ public class UserUpdateRequest {
     private String username;
     private String password;
     private String email;
-    private LocalDateTime createdAt;
+    private LocalDate createdAt;
 
     public String getUsername() {
         return username;
@@ -44,11 +45,11 @@ public class UserUpdateRequest {
         this.email = email;
     }
 
-    public LocalDateTime getCreatedAt() {
+    public LocalDate getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
+    public void setCreatedAt(LocalDate createdAt) {
         this.createdAt = createdAt;
     }
 }

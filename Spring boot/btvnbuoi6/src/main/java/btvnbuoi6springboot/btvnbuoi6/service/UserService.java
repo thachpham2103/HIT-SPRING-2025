@@ -2,6 +2,7 @@ package btvnbuoi6springboot.btvnbuoi6.service;
 
 
 import btvnbuoi6springboot.btvnbuoi6.dto.usersDTO.UserCreateRequest;
+import btvnbuoi6springboot.btvnbuoi6.dto.usersDTO.UserUpdateRequest;
 import btvnbuoi6springboot.btvnbuoi6.entity.Users;
 import btvnbuoi6springboot.btvnbuoi6.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-public List<Users> getUsers(){
+public List<Users> getUsers(long userId){
     return userRepository.findAll();
 }
 
@@ -29,6 +30,20 @@ public Users createUser(UserCreateRequest request){
     return userRepository.save(users);
 }
 
+public Users updateUser(UserUpdateRequest request, long userId){
 
+    Users users= (Users) getUsers(userId);
+
+    users.setPassword(request.getPassword());
+    users.setEmail(request.getEmail());
+    users.setUsername(request.getUsername());
+
+    return userRepository.save(users);
+
+}
+
+    public void deleteUser(long userId) {
+        userRepository.deleteById(userId);
+    }
 
 }
