@@ -10,9 +10,9 @@ import java.util.Optional;
 
 @Repository
 public interface EmployeesRepository extends JpaRepository<Employees, Long> {
-    Optional<Employees> findByFullName(String fullname);
+    Optional<Employees> findByFullNameIgnoreCase(String fullName);
     Optional<Employees> findByDepartmentsId(Long departmentId);
-    List<Employees> findAllByPositions_Id(Long id);
+    List<Employees> findAllByPositionsId(Long id);
 
 
 }

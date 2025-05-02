@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/ecl")
@@ -36,6 +37,21 @@ public class EmployeesController {
   String deleteEmployees(@PathVariable long id){
     employeesService.deleteDepartment(id);
     return "thành công!!!";
+  }
+
+  @GetMapping("/{employeesId}")
+  Employees getEmployeesId(@PathVariable("employeesId") long id){
+    return employeesService.getEmployeesId(id);
+  }
+
+  @GetMapping("/searchfull")
+  public Employees getByFullName(@RequestParam("fullname") String fullname) {
+    return employeesService.getFullName(fullname);
+  }
+
+  @GetMapping("/departmentId")
+  public Optional<Employees> getByDepartment(@RequestParam("departmentId") long departmentId) {
+    return employeesService.getByDepartmentId(departmentId);
   }
 
 }

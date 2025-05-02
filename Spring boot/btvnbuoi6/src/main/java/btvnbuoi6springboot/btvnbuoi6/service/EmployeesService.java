@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmployeesService {
@@ -48,5 +49,16 @@ public class EmployeesService {
     employeesRepository.deleteById(id);
   }
 
-  
+  public Employees getEmployeesId(long id) {
+    return employeesRepository.findById(id).orElseThrow(() -> new RuntimeException("Employees not found"));
+  }
+
+  public Employees getFullName(String fullname){
+    return employeesRepository.findByFullNameIgnoreCase(fullname).orElseThrow(()-> new RuntimeException("Employees not found"));
+  }
+
+  public Optional<Employees> getByDepartmentId(Long departmentId) {
+    return employeesRepository.findByDepartmentsId(departmentId);
+  }
+
 }
