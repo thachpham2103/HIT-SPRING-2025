@@ -4,6 +4,7 @@ package btvnbuoi6springboot.btvnbuoi6.service;
 import btvnbuoi6springboot.btvnbuoi6.dto.usersDTO.UserCreateRequest;
 import btvnbuoi6springboot.btvnbuoi6.dto.usersDTO.UserUpdateRequest;
 import btvnbuoi6springboot.btvnbuoi6.entity.Users;
+//import btvnbuoi6springboot.btvnbuoi6.mapper.UserMapper;
 import btvnbuoi6springboot.btvnbuoi6.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,7 @@ public class UserService {
 
     @Autowired
     private UserRepository userRepository;
+//    private UserMapper userMapper;
 
 public List<Users> getUsers(long userId){
     return userRepository.findAll();
