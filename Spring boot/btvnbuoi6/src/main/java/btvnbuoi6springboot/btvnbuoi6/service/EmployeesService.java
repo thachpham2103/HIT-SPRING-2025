@@ -21,6 +21,10 @@ public class EmployeesService {
     return employeesRepository.findAll();
   }
 
+  public Employees searchId(long id){
+    return employeesRepository.findById(id).orElseThrow(() -> new RuntimeException(" Employees not found"));
+  }
+
   public Employees createEmployees(EmployeesCreateRequest request){
 
     Employees employees= new Employees();

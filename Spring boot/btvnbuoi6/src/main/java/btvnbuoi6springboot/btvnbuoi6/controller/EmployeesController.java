@@ -54,4 +54,8 @@ public class EmployeesController {
     return employeesService.getByDepartmentId(departmentId);
   }
 
+  @GetMapping("/searchId")
+  public Employees searchId(@RequestParam("id") long id){
+    return employeesService.getEmployeesId(id);
+  }
 }
