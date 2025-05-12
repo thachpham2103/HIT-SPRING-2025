@@ -38,7 +38,7 @@ List<Book> getBook(@RequestParam long id){
     return "thanh coong!!";
 }
 
-    @GetMapping("/authorId")
+    @GetMapping("/bookId")
     public Optional<Book> getByBook(@RequestParam("bookId") long bookId) {
         return Optional.ofNullable(bookService.getBookId(bookId));
     }
