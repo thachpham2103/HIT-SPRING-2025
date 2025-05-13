@@ -1,33 +1,48 @@
 package com.springboot.buoi5.domain.dto.request;
 
-
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.antlr.v4.runtime.misc.NotNull;
-import org.hibernate.annotations.NotFound;
-import org.hibernate.annotations.processing.Pattern;
 
-//@AllArgsConstructor
+
+@AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 public class UserRequestDTO {
-    @NotNull
-    private String username;
 
-    @NotNull
-//    @Pattern( regex="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$")
+    private String username;
     private String password;
     private String firstName;
     private String lastName;
 
-
-    public UserRequestDTO(String username, String password, String firstName, String lastName) {
-        this.username = username;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public String getUsername() {
+        return username;
     }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
+    public String getPassword() {
+        return password;
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 }

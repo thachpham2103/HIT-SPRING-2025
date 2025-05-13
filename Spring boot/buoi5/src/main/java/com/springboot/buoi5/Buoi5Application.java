@@ -1,8 +1,7 @@
 package com.springboot.buoi5;
 
-import com.springboot.buoi5.domain.dto.request.UserRequestDTO;
-import com.springboot.buoi5.domain.mapper.UserMapper;
-import com.springboot.buoi5.entity.User;
+import com.springboot.buoi5.mapper.UserMapper;
+import com.springboot.buoi5.domain.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -20,13 +19,6 @@ public class Buoi5Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		UserRequestDTO req = new UserRequestDTO("username", "abckyt", "First", "Last");
 
-		User user = mapper.toEntity(req);
-		System.out.println(user.getId());
-		System.out.println(user.getPassword());
-		System.out.println(user.getFirstName());
-		System.out.println(user.getLastName());
-		System.out.println(user.getUsername());
 	}
 }
