@@ -15,4 +15,6 @@ public interface UserMapper {
     UserResponseDTO toUserReponseDTO(User user);
     //in ra danh sách
     List<UserResponseDTO> toUseReponseDTOList (List<User> userList);
+    //cập nhật
+//    UserResponseDTO to
 }
